@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviewsHub - Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Bundle JS (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+      :root {
+        --primary: #d00000;
+        --secondary: #ffba08;
+        --accent: #3f88c5;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --success: #38b000;
+        --warning: #ffba08;
+        --danger: #9d0208;
+      }
+      
+      /* Base styles */
+      body {
+        background-color: var(--light);
+        color: var(--dark);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      a {
+        color: var(--primary);
+        transition: color 0.2s;
+      }
+      
+      a:hover {
+        color: var(--danger);
+        text-decoration: none;
+      }
+      
+      /* Navbar */
+      .navbar {
+        background-color: var(--primary) !important;
+        padding: 0.8rem 1rem;
+      }
+      
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: white !important;
+      }
+      
+      .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        color: white !important;
+      }
+      
+      .navbar-nav .nav-link:hover {
+        color: var(--secondary) !important;
+      }
+      
+      /* Buttons */
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 500;
+      }
+      
+      .btn-primary:hover {
+        background-color: var(--danger);
+        border-color: var(--danger);
+      }
+      
+      .btn-outline-primary {
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+      
+      .btn-outline-primary:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+      
+      .btn-accent {
+        background-color: var(--secondary);
+        border-color: var(--secondary);
+        color: var(--dark);
+        font-weight: 600;
+      }
+      
+      .btn-accent:hover {
+        background-color: #ffaa00;
+        border-color: #ffaa00;
+      }
+      
+      .btn-success {
+        background-color: var(--success);
+        border-color: var(--success);
+      }
+      
+      /* Auth Card */
+      .auth-card {
+        border: none;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        overflow: hidden;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+      
+      .auth-header {
+        background-color: var(--primary);
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      
+      /* Tabs */
+      .nav-tabs {
+        border-bottom: 2px solid #dee2e6;
+      }
+      
+      .nav-tabs .nav-link {
+        color: var(--dark);
+        border: none;
+        padding: 0.8rem 1.5rem;
+        font-weight: 500;
+      }
+      
+      .nav-tabs .nav-link.active {
+        color: var(--primary);
+        background-color: transparent;
+        border-bottom: 3px solid var(--primary);
+      }
+      
+      .nav-tabs .nav-link:hover:not(.active) {
+        color: var(--primary);
+        border-color: transparent;
+      }
+      
+      /* Form elements */
+      .form-control:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 0.25rem rgba(208, 0, 0, 0.25);
+      }
+      
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 2rem 0;
+        margin-top: auto;
+      }
+      
+      footer a {
+        color: var(--secondary) !important;
+        margin: 0 0.8rem;
+        font-weight: 500;
+      }
+      
+      footer a:hover {
+        color: white !important;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .navbar-brand {
+          font-size: 1.3rem;
+        }
+        
+        .auth-card {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">ReviewsHub</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Explore</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="login.html">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="profile.html">My Profile</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-accent" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+    <!-- Login/Register Section -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="auth-card">
+                    <!-- Tabs -->
+                    <ul class="nav nav-tabs" id="authTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab">
+                                <i class="bi bi-box-arrow-in-right me-2"></i>Login
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab">
+                                <i class="bi bi-person-plus me-2"></i>Register
+                            </button>
+                        </li>
+                    </ul>
+                    
+                    <!-- Tab Contents -->
+                    <div class="tab-content p-4" id="authTabsContent">
+                        <!-- Login -->
+                        <div class="tab-pane fade show active" id="login" role="tabpanel">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                                </div>
+                                
+                                <div class="mb-3 d-flex justify-content-between align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                                    </div>
+                                    <a href="#" class="text-primary text-decoration-none">Forgot password?</a>
+                                </div>
+                                
+                                <div class="d-grid mb-4">
+                                    <button type="submit" class="btn btn-primary py-2">
+                                        <i class="bi bi-box-arrow-in-right me-2"></i>Login
+                                    </button>
+                                </div>
+                                
+                                <div class="position-relative text-center mb-4">
+                                    <hr>
+                                    <span class="position-absolute bg-white px-3" style="top: -12px; left: 50%; transform: translateX(-50%);">or</span>
+                                </div>
+                                
+                                <div class="d-flex justify-content-center gap-3 mb-3">
+                                    <button type="button" class="btn btn-outline-danger rounded-pill">
+                                        <i class="bi bi-google me-2"></i>Google
+                                    </button>
+                                    <button type="button" class="btn btn-outline-primary rounded-pill">
+                                        <i class="bi bi-facebook me-2"></i>Facebook
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Register -->
+                        <div class="tab-pane fade" id="register" role="tabpanel">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="registerName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="registerName" placeholder="Enter your name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="registerEmail" placeholder="Enter your email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="registerPassword" placeholder="Create a password" required>
+                                    <div class="form-text">Minimum 8 characters</div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="registerConfirm" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="registerConfirm" placeholder="Repeat your password" required>
+                                </div>
+                                
+                                <div class="d-grid mb-4">
+                                    <button type="submit" class="btn btn-primary py-2">
+                                        <i class="bi bi-person-plus me-2"></i>Create Account
+                                    </button>
+                                </div>
+                                
+                                <div class="alert alert-light border" role="alert">
+                                    <small>
+                                        <i class="bi bi-lock-fill text-primary me-2"></i>
+                                        We'll never share your information with anyone else.
+                                    </small>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <h3 class="mb-3">ReviewsHub</h3>
+            <p class="mb-4">
+                A platform built to bring transparency. Share your thoughts, read genuine feedback, and explore professionals like never before.
+            </p>
+            
+            <div class="mb-4">
+                <a href="index.html">Home</a>
+                <a href="#">Explore</a>
+                <a href="login.html">Login / Register</a>
+                <a href="profile.html">My Profile</a>
+            </div>
+        
+            <div class="text-muted">
+                &copy; 2025 ReviewsHub. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

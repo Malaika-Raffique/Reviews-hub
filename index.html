@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Bundle JS (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+      :root {
+        --primary: #d00000;
+        --secondary: #ffba08;
+        --accent: #3f88c5;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --success: #38b000;
+        --warning: #ffba08;
+        --danger: #9d0208;
+      }
+      
+      /* Base styles */
+      body {
+        color: var(--dark);
+      }
+      
+      a {
+        color: var(--primary);
+        transition: color 0.2s;
+      }
+      
+      a:hover {
+        color: var(--danger);
+        text-decoration: none;
+      }
+      
+      /* Navbar */
+      .navbar {
+        background-color: var(--primary) !important;
+        padding: 0.8rem 1rem;
+      }
+      
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+      
+      .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+      }
+      
+      .navbar-nav .nav-link:hover {
+        color: var(--secondary) !important;
+      }
+      
+      /* Buttons */
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 500;
+      }
+      
+      .btn-primary:hover {
+        background-color: var(--danger);
+        border-color: var(--danger);
+      }
+      
+      .btn-outline-primary {
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+      
+      .btn-outline-primary:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+      
+      .btn-accent {
+        background-color: var(--secondary);
+        border-color: var(--secondary);
+        color: var(--dark);
+        font-weight: 600;
+      }
+      
+      .btn-accent:hover {
+        background-color: #ffaa00;
+        border-color: #ffaa00;
+      }
+      
+      /* Hero section */
+      .hero-section {
+        background-color: var(--light);
+        padding: 4rem 0;
+      }
+      
+      /* Cards */
+      .card {
+        border: none;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        margin-bottom: 1.5rem;
+      }
+      
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      }
+      
+      .card-img-top {
+        height: 180px;
+        object-fit: cover;
+      }
+      
+      /* Carousel */
+      .carousel-inner img {
+        height: 500px;
+        object-fit: cover;
+      }
+      
+      .carousel-caption {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: var(--dark) !important;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        right: 10%;
+        left: 10%;
+        bottom: 20%;
+      }
+      
+      /* Ratings */
+      .rating-stars {
+        color: var(--secondary);
+        font-size: 1.2rem;
+      }
+      
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 3rem 0;
+      }
+      
+      footer a {
+        color: var(--secondary) !important;
+        margin: 0 0.8rem;
+        font-weight: 500;
+      }
+      
+      footer a:hover {
+        color: white !important;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .carousel-inner img {
+          height: 300px;
+        }
+        
+        .carousel-caption {
+          bottom: 10%;
+          padding: 1rem;
+        }
+        
+        .navbar-brand {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">ReviewsHub</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Explore</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="profile.html">My Profile</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-accent" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container text-center">
+          <h1 class="display-5 fw-bold">Welcome to ReviewsHub</h1>
+          <p class="lead">
+            A platform where users can explore, share, and discover honest reviews on coders, influencers, and businesses.
+          </p>
+          <a href="#explore" class="btn btn-primary btn-lg mt-3">Start Exploring</a>
+        </div>
+    </section>
+      
+    <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://cdn.pixabay.com/photo/2020/07/26/20/02/terminal-5440620_1280.jpg" class="d-block w-100" alt="Coders">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Honest Reviews on Coders</h5>
+              <p>Explore reviews and feedback about top coders in the industry.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2024/04/08/10/36/podcast-8683196_960_720.jpg" class="d-block w-100" alt="Influencers">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Influencer Ratings & Reviews</h5>
+              <p>Find out what people think about influencers, from micro to mega.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2015/01/08/18/11/laptops-593296_960_720.jpg" class="d-block w-100" alt="Business">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Professional Business Reviews</h5>
+              <p>Learn about the top businesses and customer experiences.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+          <h2 class="fw-bold">What is ReviewsHub?</h2>
+          <p class="lead mt-3">
+            ReviewsHub is a community-driven platform where you can explore, share, and read reviews on coders, influencers, and businesses. 
+            We believe in transparency and real voices — helping you make better decisions.
+          </p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+          <h2 class="text-center fw-bold mb-5">Trending Reviews</h2>
+          <div class="row g-4">
+            <!-- Review Card 1 -->
+            <div class="col-md-4">
+              <div class="card h-100">
+                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Tech Influencer">
+                <div class="card-body">
+                  <h5 class="card-title">Jane reviewed <span class="text-primary">TechInfluencerX</span></h5>
+                  <p class="card-text">"Great content, consistent uploads, and always honest opinions!"</p>
+                  <div class="rating-stars mb-2">★★★★★</div>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="col-md-4">
+              <div class="card h-100">
+                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Developer">
+                <div class="card-body">
+                  <h5 class="card-title">Ali reviewed <span class="text-primary">DevMark</span></h5>
+                  <p class="card-text">"Clean code and timely delivery — exceeded expectations!"</p>
+                  <div class="rating-stars mb-2">★★★★☆</div>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="col-md-4">
+              <div class="card h-100">
+                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Business">
+                <div class="card-body">
+                  <h5 class="card-title">Sara reviewed <span class="text-primary">ShopNest</span></h5>
+                  <p class="card-text">"Fast delivery, but the packaging needs improvement."</p>
+                  <div class="rating-stars mb-2">★★★☆☆</div>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container text-center">
+          <h3 class="mb-3">ReviewsHub</h3>
+          <p class="mb-4">
+            A platform built to bring transparency. Share your thoughts, read genuine feedback, and explore professionals like never before.
+          </p>
+          
+          <div class="mb-4">
+            <a href="index.html">Home</a>
+            <a href="#">Explore</a>
+            <a href="login.html">Login / Register</a>
+            <a href="profile.html">My Profile</a>
+          </div>
+      
+          <div class="text-muted">
+            &copy; 2025 ReviewsHub. All rights reserved.
+          </div>
+        </div>
+    </footer>
+</body>
+</html>
